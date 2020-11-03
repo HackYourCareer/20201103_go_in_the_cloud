@@ -3,15 +3,7 @@ package main
 import "fmt"
 
 func main() {
-
-	// 1) Scan ports
 	scanPortsExample()
-
-	// 2) Run pipeline
-	//runPipelinesExample()
-
-	// 3) Run pipeline with fan-in-fan-out pattern
-	runPipelinesFanInFanOutExample()
 }
 
 func scanPortsExample() {

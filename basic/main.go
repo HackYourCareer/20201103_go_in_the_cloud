@@ -43,11 +43,11 @@ func main() {
 
 	// 7 structs
 
-	// structs with zero values
+	// struct with zero values
 	c1 := Complex{}
 	fmt.Printf("Struct with zero values: %v \n", c1)
 
-	// stucts initialization
+	// stuct initialization
 	c2 := Complex{
 		Im: 10,
 		Re: 10,

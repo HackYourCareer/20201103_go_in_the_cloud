@@ -1,5 +1,7 @@
 package main
 
+import "math"
+
 type MyInt int
 
 type sieveElement struct {
@@ -16,6 +18,7 @@ func (m MyInt) IsOdd() bool {
 }
 
 func (m MyInt) IsPrime() bool {
+
 	if m <= 3 {
 		return true
 	}
@@ -33,7 +36,9 @@ func (m MyInt) IsPrime() bool {
 		v++
 	}
 
-	for i, current := range s {
+	n := int(math.Ceil(math.Sqrt(float64(m))))
+	for i := 0 ; i <= n ; i++ {
+		current := s[i]
 		for j := i + 1; j < len(s); j++ {
 			if s[j].number%current.number == 0 {
 				s[j].isPrime = false

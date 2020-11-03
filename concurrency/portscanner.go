@@ -19,7 +19,7 @@ func scanPorts(address string, from, to int) []int {
 			conn.Close()
 			ports = append(ports, port)
 		} else {
-			fmt.Printf("Failed to open port %d \n", port)
+			fmt.Printf("Failed to open port %d: %s \n", port, err)
 		}
 	}
 
@@ -54,7 +54,7 @@ func startWorker(address string, port int, results chan<- int, wg *sync.WaitGrou
 			conn.Close()
 			results <- port
 		} else {
-			fmt.Printf("Failed to open port %d \n", port)
+			fmt.Printf("Failed to open port %d: %s \n", port, err)
 		}
 		wg.Done()
 	}()
